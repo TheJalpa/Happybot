@@ -21,8 +21,8 @@ async def on_message(message):
         uname = message.mentions[0].mention
         channel = await user.create_dm()
         botaction = random_line('botaction.txt')
-        await channel.send("Hey there " + uname + ", it looks like " + "{0.author.mention}".format(message) + " wanted to send you something positive.\n" + botaction + "\n" + random_line('src/affirmation.txt'))
-
+        await channel.send("Hey there " + uname + ", it looks like a friend wanted to send you something positive.\n" + botaction + "\n" + random_line('src/affirmation.txt'))
+#" + "{0.author.mention}".format(message) + "
 
 #Where the client id needs to be
 #You can get this from your discord developer portal under your Bot page and add your token.
