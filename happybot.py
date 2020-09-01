@@ -25,4 +25,6 @@ async def on_message(message):
 
 
 #Where the client id needs to be
+#You can get this from your discord developer portal under your Bot page and add your token.
+#You really only need to give it "bot" permissions, and that's it.
 client.run('')
