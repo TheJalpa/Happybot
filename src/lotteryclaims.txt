@@ -1,0 +1,3 @@
+
+#this looks for discord users that have claimed keys, it starts with line 1 blank always.
+#if the user claims a key it shows here and will tell them no more keys can be taken till you clear this log below this line
