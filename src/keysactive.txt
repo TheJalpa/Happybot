@@ -1,3 +1,0 @@
-1234-5678-1234
-4568-8281-2345
-literally-any-string-of-chars

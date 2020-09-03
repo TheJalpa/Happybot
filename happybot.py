@@ -29,7 +29,7 @@ async def on_message(message):
                 if badbool == True:
                     break
                 if not line.startswith(convuser):
-                    print("bruh")
+                    
                     f1lines = f1.readlines()
                     f2lines = f2.readlines()
                     randomline = random_line('src/keysactive.txt')
@@ -51,13 +51,27 @@ async def on_message(message):
                     f2.truncate()
                     
 
-                    await channel.send("Wow, looks like someone got a steam key! " + randomline)
+                    await channel.send("Let's SPINNNNN the wheel! You've won a brand new... " + randomline + "\nRemember all fake items are fake and only steam keys are real.\nBut I'm just a bot and I can't materialize things yet.")
+                    cleanupkey = str(user)
+                    print (cleanupkey + " played the lottery!")
                     break
 
     if message.content.startswith("!encourage"):
         await message.channel.send(random_line('src/inspire.txt'))
     if message.content.startswith("!kindwords"):
-        await message.channel.send("{0.author.mention.}".format(message) + random_line(" " + 'src/affirmation.txt'))
+        await message.channel.send("{0.author.mention}".format(message) + " " + random_line('src/affirmation.txt'))
+    if message.content.startswith("!clearlotterywinners"):
+        user = str(message.author)
+        admin = str('corsepervita#1709')
+        
+        if user == admin:
+            await message.channel.send("{0.author.mention}".format(message) + " has declared the lottery cleared, THE LOTTERY IS FREE TO PLAY FOR ALL!")
+            with open("src/lotteryclaims.txt", "r+") as f3:
+                f3.truncate()
+                f3.write("\nAll claimed users can be found in this document starting with new lines below this line.\n")
+        else:
+            print("a non admin attempted to clear the lottery with " + user)
+            await message.channel.send("sorry partner, but you're not an admin.")
     if message.content.startswith("!sendkindwords"):
         user = user = message.mentions[0]
         print (user)
